@@ -17,7 +17,7 @@ export function Films() {
   return (
     <Container fluid>
       <NavBar onSearch={setSearch} searchTearm={search} />
-      <ListFilms films={films} searchTearm={search} />
+      <ListFilms films={films} searchTearm={search} loading={loading} />
     </Container>
   );
 }

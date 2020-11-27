@@ -5,6 +5,9 @@
 - React & Redux with Create React App Template.
 - Redux Toolkit.
 - Semantic UI.
+- Styled component.
+
+### Demo
 
 ## Available Scripts
 
