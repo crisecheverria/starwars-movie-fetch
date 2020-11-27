@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchFilms, selectFilms } from "./filmsSlice";
 import NavBar from "../films/components/NavBar";
 import ListFilms from "../films/components/ListFilms";
-import { Container } from "semantic-ui-react";
+import { Container, Message } from "semantic-ui-react";
 
 export function Films() {
   const { films, loading, hasError, errorMsg } = useSelector(selectFilms);
@@ -17,6 +17,7 @@ export function Films() {
   return (
     <Container fluid>
       <NavBar onSearch={setSearch} searchTearm={search} />
+      {hasError && <Message floating>{errorMsg}</Message>}
       <ListFilms films={films} searchTearm={search} loading={loading} />
     </Container>
   );
