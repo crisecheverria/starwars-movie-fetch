@@ -51,9 +51,9 @@ export default function ListFilms({ films, searchTearm, loading }) {
               <Placeholder.Line />
             </Placeholder>
           )}
-          {films.map(({ fields }, id) => {
-            if (fields.title.toLowerCase().includes(searchTearm)) {
-              return (
+          {films.map(
+            ({ fields }, id) =>
+              fields.title.toLowerCase().includes(searchTearm) && (
                 <Segment key={id} vertical>
                   <Grid>
                     <Grid.Row
@@ -74,9 +74,8 @@ export default function ListFilms({ films, searchTearm, loading }) {
                     </Grid.Row>
                   </Grid>
                 </Segment>
-              );
-            }
-          })}
+              )
+          )}
         </Grid.Column>
         <Grid.Column>
           {fields ? (
